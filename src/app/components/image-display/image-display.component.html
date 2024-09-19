@@ -1,0 +1,7 @@
+<div *ngIf="dogs$ | async as dogs" class="mt-2">
+  <img *ngIf="dogs.hasFetched" [src]="dogs.src" alt="Dogs">
+  <div *ngIf="!dogs.hasFetched" class="w-48 h-48 border-2 border-dashed rounded-md flex items-center justify-center">
+    <span>No image loaded...</span>
+  </div>
+  <button (click)="getImage()" class="bg-blue-500 text-white px-2 py-1 rounded-md shadow-md mt-2">Get image</button>
+</div>
